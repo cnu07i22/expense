@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "ea6841c0-e295-4500-b18b-483206e455b6",
+		"name": "Expenses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://expenses.test/api/users",
+					"protocol": "http",
+					"host": [
+						"expenses",
+						"test"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Expense",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://expenses.test/api/expense/1",
+					"protocol": "http",
+					"host": [
+						"expenses",
+						"test"
+					],
+					"path": [
+						"api",
+						"expense",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add expense EQUAL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"amount\" :  \"1000\",\r\n    \"number_users\": 4,\r\n    \"users\": \"2,3\",\r\n    \"split_type\": \"EQUAL\",\r\n    \"split_values\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://expenses.test/api/expense",
+					"protocol": "http",
+					"host": [
+						"expenses",
+						"test"
+					],
+					"path": [
+						"api",
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add expense EXACT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1, \r\n    \"amount\" :  \"1250\",\r\n    \"number_users\": 2,\r\n    \"users\": \"2,3\",\r\n    \"split_type\": \"EXACT\",\r\n    \"split_values\":\"370,880\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://expenses.test/api/expense",
+					"protocol": "http",
+					"host": [
+						"expenses",
+						"test"
+					],
+					"path": [
+						"api",
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add expense PERCENT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 4, \r\n    \"amount\" :  \"1250\",\r\n    \"number_users\": 4,\r\n    \"users\": \"1,2,3,4\",\r\n    \"split_type\": \"PERCENT\",\r\n    \"split_values\":\"40,20,20,20\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://expenses.test/api/expense",
+					"protocol": "http",
+					"host": [
+						"expenses",
+						"test"
+					],
+					"path": [
+						"api",
+						"expense"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

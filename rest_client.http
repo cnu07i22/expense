@@ -1,0 +1,26 @@
+GET http://expenses.test/api/expense
+
+###
+
+# POST http://restfulapi.test/api/posts
+# Content-Type: application/json
+
+# {
+#     "title": "My brand new title",
+#     "content": "My brand new content"
+# }
+
+
+POST http://expenses.test/api/expense HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    
+    "user_id" :1,
+    "amount" :  "1200",
+    "number_users": 4,
+    "users": "1,2,3,4",
+    "split_type": "EQUAL",
+    "split_values":"40,20,20,20"
+}
